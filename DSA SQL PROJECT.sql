@@ -57,7 +57,7 @@ WHERE Customer_Segment ='Small Business')
 
 SELECT COUNT(*) FROM [KMS Sql Case Study]
 WHERE CUSTOMER_NAME='DENNIS KANE'
---8. Which Corporate Customer placed the most number of orders in 2009 – 2012? NEED CORRECTION
+--8. Which Corporate Customer placed the most number of orders in 2009 â€“ 2012? NEED CORRECTION
 SELECT Customer_Name,Count(Order_ID) AS Orders FROM [KMS Sql Case Study]
 WHERE Customer_Segment='Corporate' AND Year(Order_Date) BETWEEN 2009 AND 2012
 GROUP BY Customer_Name
@@ -91,6 +91,11 @@ AVG(DATEDIFF(day, [Order_Date], [Ship_Date])) AS AvgShipDays
 FROM [KMS Sql Case Study]
 GROUP BY Order_Priority,Ship_Mode
 ORDER BY Order_Priority asc
+-- The company did not appropriately spend on shipping based on order priority.  
+-- It overpaid for low-priority shipments.  
+-- It underutilized the fastest method for critical needs.  
+-- It missed cost-saving opportunities for medium and low priorities.  
+-- To correct this, the company should match urgency to shipping speed and cost more strategically.
 
 
 
